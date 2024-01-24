@@ -1,0 +1,9 @@
+huggingface-hub
+torch
+pandas
+transformers
+pinecone-client
+langchain
+tqdm
+peft
+datasets
