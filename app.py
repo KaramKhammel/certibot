@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template
-from certibot.chat_ai import get_ai_response
+from chat_ai import get_ai_response
 
 app = Flask(__name__)
 
