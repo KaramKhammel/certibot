@@ -1,7 +1,7 @@
 def get_ai_response(user_input):
     # A simple rule-based AI for demonstration
-    if "hello" in user_input.lower():
-        return "Hello there! How can I assist you?"
+    if "Bonjour" in user_input.lower():
+        return "Bonjour! Comment puis-je vous aider?"
     else:
-        return "I'm not sure how to respond to that."
+        return "Je ne sais pas comment répondre à cela"
         
