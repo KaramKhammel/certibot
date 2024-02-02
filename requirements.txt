@@ -7,3 +7,5 @@ langchain
 tqdm
 peft
 datasets
+xformers
+einops
