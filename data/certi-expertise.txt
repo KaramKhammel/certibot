@@ -1,0 +1,36 @@
+Notre expertise : le reconditionnement de smartphones
+Certideal est une entreprise française de vente et de reconditionnement de téléphones mobiles. Notre service achat s’approvisionne auprès d’opérateurs qui reprennent des martphones n’ayant connu qu’un seul et unique propriétaire. Chacun des produits reconditionnés mis à la vente sur notre site est alors récupéré physiquement par nos soins et suit dans nos locaux un processus d’homologation en trois étapes : vérification, test et validation.
+Nos experts sont ainsi les premiers à intervenir techniquement sur le produit, que nous reconditionnons nous-mêmes en interne, sans autre intermédiaire. C’est l’assurance pour nos clients d’acheter un téléphone en toute confiance, reconditionné en France, accompagné d’une garantie de 24 mois et d’un service après-vente en contact continu avec nos experts techniques.
+Test Appareil photo avant :​ Vérification de la netteté et absence de dysfonctionnement caméra selfie.
+Test Appareil photo arrière ​: Vérification de la netteté et absence de dysfonctionnement caméra.
+Test Vitre avant ​ : Examen approfondi de potentielles rayures et fissures .
+Test Façade arrière : Examen approfondi de potentielles rayures et fissures .
+Test Tranche :​ Examen approfondi de potentielles rayures et fissures .
+Test Gradage esthétique : ​Correct, Bon état, Très bon état, Comme neuf.
+Test Écran tactile : Test de l’intégralité de l’écran tactile avec une application spécialisée.
+Test Écran tactile : Test de l’intégralité de l’écran tactile avec une application spécialisée.
+Test Bouton Power : Tests d’allumage et d’arrêt du téléphone.
+Test Bouton Mute : Vérification de l’état de marche du bouton silence par appui prolongé.
+Test Boutons Volume :​Vérification de l’état de marche du bouton volume par appui prolongé.
+Test Bouton Home : Vérification de l’état de marche du bouton Home par appui prolongé.
+Test Touch ID : Vérification manuelle du bon fonctionnement de la fonctionnalité Touch ID.
+Test Prise Jack ou Lightning : Branchement et test des connexions.
+Test Connecteur de charge :​ Test du bon fonctionnement de la charge / charge rapide du produit.
+Test Batterie : Vérification de l’état de la batterie à partir des données indiquées sur l’application spécialisée 3uTools.
+Test Vibreur : Vérification que le téléphone vibre correctement.
+Test Haut-Parleur : Écoute de l’audio en haut-parleur.
+Test Microphone : Enregistrement et écoute d’un message vocal.
+Test Lampe torche :​ Test du fonctionnement de la lampe torche.
+Test Capteur de proximité : Vérification que le téléphone ne s’allume plus une fois en appel.
+Test Accéléromètre : Test de l’accéléromètre.
+Test Gyroscope : Test du gyroscope.
+Test Bluetooth : Activation du Bluetooth et test d’appairage.
+Test WiFi : Vérification de la connexion au réseau Internet.
+Test Réseau mobile :​ Réalisation d’un appel téléphonique.
+Test Données mobile :​ Test du réseau de données mobiles.
+Test GPS : Test de l’exactitude de la position GPS.
+Test Capacité : Vérification de la capacité de mémoire disponible en lien avec les caractéristiques du modèle
+Test Débloqué iCloud / Drive : Vérification dès l’initialisation.
+Test Débloqué opérateur : Vérification dès l’initialisation.
+Test Réinitialisation : Réinitialisation complète et vérification du bon effacement des données.
+Test IMEI : Vérification de la validité de l’IMEI du téléphone.
