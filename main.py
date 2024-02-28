@@ -1,12 +1,11 @@
 from flask import Flask, request, render_template, jsonify, session
 from flask_session import Session
-from huggingface_hub import login
 
 import torch
 
-from load_data import load_data
-from rag import *
-from load_models import *
+from utils.load_data import load_data
+from utils.rag import *
+from utils.load_models import *
 
 
 
@@ -22,7 +21,7 @@ device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else
 
 
 # importing data
-path = path = '/home/paperspace/certibot/data/certibot-data.jsonl'
+path = '/home/paperspace/certibot/data/certibot-data.jsonl'
 dataset = load_data(path)
 
 
@@ -31,7 +30,7 @@ api_key = "a344a187-8b52-422d-97c2-96628ef67ef6"
 index_name = 'certibot-rag'
 embedding_dim = 1024
 
-vectorstore = initialize_index(
+vectorstore = init_index(
     api_key=api_key,
     index_name=index_name,
     embedding_dim=embedding_dim
@@ -51,13 +50,13 @@ model = LoadModel(model_checkpoint, model_kwargs)
 
 # upsert data to vectorstore
 batch_size = 4
-upsert = False
+upsert = True
 
 if upsert:
     upsert_to_index(
         index=vectorstore,
         embedding=embedding,
-        data=dataset,
+        dataset=dataset,
         batch_size=batch_size
     )
 

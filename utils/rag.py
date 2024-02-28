@@ -5,9 +5,10 @@ from typing import NoReturn, Any, List, Dict
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pinecone.data import Index
+from datasets import Dataset
 
 
-def initialize_index(api_key: str, index_name: str, embedding_dim:int):
+def init_index(api_key: str, index_name: str, embedding_dim:int):
     pc = pinecone.Pinecone(api_key=api_key)
 
     # check if index already exists (it shouldn't if this is first time)
@@ -31,7 +32,8 @@ def initialize_index(api_key: str, index_name: str, embedding_dim:int):
     return index
 
 
-def upsert_to_index(index, embedding, data, batch_size) -> NoReturn:
+def upsert_to_index(index, embedding, dataset:Dataset, batch_size:int) -> NoReturn:
+    data = dataset.to_pandas()
     for i in range(0, len(data), batch_size):
         end = min(len(data), i + batch_size)
         batch = data[i:end]
@@ -40,7 +42,7 @@ def upsert_to_index(index, embedding, data, batch_size) -> NoReturn:
         texts = batch['context']
 
         embeds = embedding.embed_documents(texts)
-
+        
         metadata = [{
             'context': x['context'],
             'topic': x['topic']
