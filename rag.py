@@ -2,7 +2,7 @@ import pinecone
 import time
 
 from typing import NoReturn, Any, List, Dict
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_community.embeddings import HuggingFaceEmbeddings
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pinecone.data import Index
 
@@ -91,7 +91,7 @@ def generate(
         for exchange in history:
             history_prompt += f"Q: {exchange['query']}\nA: {exchange['response']}\n"
 
-    # prompt template based on the model
+    # prompt template
     prompt = f"""Instruction du système
     {template_instruction}
     ---------------------------------------------------------------------
@@ -127,7 +127,7 @@ def generate(
     # keep the generated part
     idx = output.index(eos) + len(eos)
     answer = output[idx:].strip()
-    
+
     if 'Réponse:' in answer:
         answer = answer.replace('Réponse:', '').strip()
 

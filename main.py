@@ -8,15 +8,14 @@ from load_data import load_data
 from rag import *
 from load_models import *
 
+
+
 app = Flask(__name__)
 
-# Configure session to use filesystem (instead of signed cookies)
+# Configure session to use filesystem
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-
-hf_token = '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'
-login(token=hf_token)
 
 
 device = f'cuda:{torch.cuda.current_device()}' if torch.cuda.is_available() else 'cpu'
@@ -104,6 +103,8 @@ def get_reponse():
 
     history.append({'query': user_input, 'response': response})
     session['history'] = history
+    
+    return jsonify({'response': response})
 
 
 
