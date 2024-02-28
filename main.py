@@ -104,3 +104,8 @@ def get_reponse():
 
     history.append({'query': user_input, 'response': response})
     session['history'] = history
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)

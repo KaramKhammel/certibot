@@ -17,14 +17,17 @@
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    var response = this.responseText;
+                    // Adjusting here to handle the JSON response
+                    var response = JSON.parse(this.responseText).response;
                     var chatbox = document.getElementById('chatbox');
                     chatbox.innerHTML += '<p><strong>You:</strong> ' + userInput + '</p>';
                     chatbox.innerHTML += '<p><strong>AI:</strong> ' + response + '</p>';
                 }
             };
-            xhr.send('user_input=' + userInput);
+            xhr.send('user_input=' + encodeURIComponent(userInput));
         }
+    </script>
+
     </script>
 </body>
 </html>
