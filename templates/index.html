@@ -2,15 +2,63 @@
 <html>
 <head>
     <title>CertiBot</title>
+    <style>
+        body {
+            text-align: center; /* Centers the content */
+            font-family: Arial, sans-serif;
+        }
+        #header {
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Aligns logo and title vertically */
+            flex-direction: row; /* Stacks items vertically */
+        }
+        #header img {
+            height: 50px; /* Adjust based on your logo's size */
+            margin-right: 5px; /* Space between logo and title */
+        }
+        #chat-interface {
+            margin: 50px auto; /* Centers the chat interface */
+            width: 100%; /* Adjust based on your preference */
+            max-width: 600px; /* Adjust based on your preference */
+        }
+        input[type="text"] {
+            width: 100%; /* Input takes full width */
+            margin: 10px 0; /* Adds space around input */
+        }
+        button {
+            width: 10%; /* Button takes 40% width */
+            margin: 0 auto; /* Centers the button horizontally */
+            display: block; /* Makes the button a block element to enable margin auto */
+        }
+        #loading {
+            display: none;
+            margin: 0 auto 10px; /* Centers the loading GIF, space below */
+        }
+        #chatbox {
+            text-align: left; /* Aligns chat log to the left */
+            margin-top: 5px; /* Adds space above the chatbox */
+        }
+        /* Same style for loading GIF and logo */
+        #loading img, #header img {
+            height: 30px; /* Adjust if necessary */
+        }
+    </style>
 </head>
 <body>
-    <h2><img src="/static/logo_certideal.png" alt="logo" style="height: 30px; margin-right: 10px;">CertiBot</h2>
-    <input type="text" id="user_input" placeholder="Type something...">
-    <button onclick="sendMessage()">Send</button>
-    <div id="loading" style="display: none;">
-        <img src="loading.gif" alt="Loading...">
+    <div id="header">
+        <img src="/static/logo_certideal.png" alt="Logo">
+        <h2>CertiBot</h2>
     </div>
-    <div id="chatbox"></div>
+    <div id="chat-interface">
+        <input type="text" id="user_input" placeholder="Type something...">
+        <button onclick="sendMessage()">Send</button>
+        <div id="loading">
+            <img src="/static/loading-gif.gif" alt="Loading...">
+        </div>
+        <div id="chatbox"></div>
+    </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
