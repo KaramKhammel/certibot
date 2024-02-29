@@ -2,11 +2,13 @@ from flask import Flask, request, render_template, jsonify, session
 from flask_session import Session
 
 import torch
+import warnings
 
 from utils.load_data import load_data
 from utils.rag import *
 from utils.load_models import *
 
+warnings.filterwarnings('ignore')
 
 
 app = Flask(__name__)
@@ -85,6 +87,12 @@ def get_reponse():
         index=vectorstore,
         top_k=4
     )
+
+    # print contexts
+    print('Contexts:')
+    for context in contexts:
+        print(context)
+        print('---------------------------------------------------------------------')
 
     # retrieve conversation history
     history = session.get('history', [])
