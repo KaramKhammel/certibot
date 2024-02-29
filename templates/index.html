@@ -4,31 +4,50 @@
     <title>CertiBot</title>
 </head>
 <body>
-    <h2>CertiBot</h2>
+    <h2><img src="/static/logo_certideal.png" alt="logo" style="height: 30px; margin-right: 10px;">CertiBot</h2>
     <input type="text" id="user_input" placeholder="Type something...">
     <button onclick="sendMessage()">Send</button>
+    <div id="loading" style="display: none;">
+        <img src="loading.gif" alt="Loading...">
+    </div>
     <div id="chatbox"></div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var input = document.getElementById('user_input');
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+        });
+
         function sendMessage() {
             var userInput = document.getElementById('user_input').value;
+            if (!userInput.trim()) return;
+            document.getElementById('loading').style.display = 'block'; // Show loading icon
+
             var xhr = new XMLHttpRequest();
             xhr.open("POST", "/get_response", true);
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
             xhr.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    // Adjusting here to handle the JSON response
-                    var response = JSON.parse(this.responseText).response;
-                    var chatbox = document.getElementById('chatbox');
-                    chatbox.innerHTML += '<p><strong>You:</strong> ' + userInput + '</p>';
-                    chatbox.innerHTML += '<p><strong>AI:</strong> ' + response + '</p>';
+                if (this.readyState == 4) {
+                    document.getElementById('loading').style.display = 'none'; // Hide loading icon
+                    if (this.status == 200) {
+                        var response = JSON.parse(this.responseText).response;
+                        var chatbox = document.getElementById('chatbox');
+                        chatbox.innerHTML += '<div><strong>You:</strong> ' + userInput + '</div>';
+                        chatbox.innerHTML += '<div><strong>AI:</strong> ' + response + '</div>';
+                        document.getElementById('user_input').value = '';
+                        chatbox.scrollTop = chatbox.scrollHeight;
+                    } else {
+                        console.error('There was an error processing your request.');
+                    }
                 }
             };
             xhr.send('user_input=' + encodeURIComponent(userInput));
         }
     </script>
-
-    </script>
 </body>
 </html>
-
